@@ -1,6 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
-import { assets } from "../../assets/assets";
-import "../../css/components/menubar.css";
+import { assets } from "../assets/assets";
+import "../css/components/menubar.css";
 
 export default function Menubar() {
   const location = useLocation();

@@ -1,12 +1,12 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import Menubar from "./components/Menubar/Menubar";
-import Dashboard from "./pages/Dashboard/Dashboard";
-import ManageCategories from "./pages/ManageCategories/ManageCategories";
-import Explore from "./pages/Explore/Explore";
-import ManageItems from "./pages/ManageItems/ManageItems";
-import ManageUsers from "./pages/ManageUsers/ManageUsers";
-import NotFound from "./pages/NotFound";
+import Menubar from "./components/Menubar.jsx";
+import Dashboard from "./pages/Dashboard.jsx";
+import ManageCategories from "./pages/ManageCategories.jsx";
+import Explore from "./pages/Explore.jsx";
+import ManageItems from "./pages/ManageItems.jsx";
+import ManageUsers from "./pages/ManageUsers.jsx";
+import NotFound from "./pages/NotFound.jsx";
 
 export default function App() {
   return (
