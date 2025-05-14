@@ -1,4 +1,4 @@
-import "../../css/pages/ManageCategories.css";
+import "../css/pages/ManageCategories.css";
 export default function ManageCategories() {
   return (
     <div className="category-container">
