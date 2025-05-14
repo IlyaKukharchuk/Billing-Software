@@ -6,6 +6,7 @@ import ManageCategories from "./pages/ManageCategories/ManageCategories";
 import Explore from "./pages/Explore/Explore";
 import ManageItems from "./pages/ManageItems/ManageItems";
 import ManageUsers from "./pages/ManageUsers/ManageUsers";
+import NotFound from "./pages/NotFound";
 
 export default function App() {
   return (
@@ -17,6 +18,7 @@ export default function App() {
         <Route path="/items" element={<ManageItems />} />
         <Route path="/category" element={<ManageCategories />} />
         <Route path="/users" element={<ManageUsers />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
   );
