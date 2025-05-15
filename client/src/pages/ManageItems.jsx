@@ -3,7 +3,7 @@ import ItemsList from "../css/components/ManageItems/ItemsList";
 
 export default function ManageItems() {
   return (
-    <div className="users-container">
+    <div className="category-container">
       <div className="left-column">
         <ItemsForm />
       </div>
