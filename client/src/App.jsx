@@ -1,5 +1,4 @@
 import { Route, Routes } from "react-router-dom";
-import "./App.css";
 import Menubar from "./components/Menubar.jsx";
 import Dashboard from "./pages/Dashboard.jsx";
 import ManageCategories from "./pages/ManageCategories.jsx";
