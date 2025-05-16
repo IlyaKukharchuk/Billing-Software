@@ -1,6 +1,10 @@
+import { useContext } from "react";
 import "../css/pages/Explore.css";
+import { AppContext } from "../context/AppContext";
 
 export default function Explore() {
+  const { categories } = useContext(AppContext);
+  console.log(categories);
   return (
     <div className="content-container explore">
       <div className="left-column explore">
