@@ -4,7 +4,7 @@ import "../css/pages/ManageUsers.css";
 
 export default function ManageUsers() {
   return (
-    <div className="users-container">
+    <div className="content-container">
       <div className="left-column">
         <UsersForm />
       </div>

@@ -15,8 +15,11 @@ body {
 /* Mobile (Landscape) */
 @media (max-width: 767px) {
   /* Стили под мобильники в альбомной ориентации */
-  .category-container {
+  .content-container {
     flex-direction: column !important;
+  }
+  .left-column {
+    width: 100% !important;
   }
   .right-column {
     width: 100% !important;

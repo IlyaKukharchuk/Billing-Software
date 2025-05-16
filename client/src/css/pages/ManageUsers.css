@@ -1,29 +1,7 @@
-.users-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  padding: 20px;
-}
-
-.left-column {
-  width: 100%;
-  border: 1px solid #212529;
-  border-radius: 8px;
-  padding: 20px;
-  margin-right: 20px;
-}
-
-.right-column {
-  width: 50%;
-  border: 1px solid #212529;
-  border-radius: 8px;
-  padding: 20px;
-}
-
 .form-label img {
-  width: 100%;
+  width: 64px;
+  height: 64px;
 }
-
 .category-fields {
   margin-top: 5px;
 }

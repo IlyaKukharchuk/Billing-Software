@@ -1,4 +1,4 @@
-.category-container {
+.content-container {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -6,7 +6,7 @@
 }
 
 .left-column {
-  width: 100%;
+  width: 50%;
   border: 1px solid #212529;
   border-radius: 8px;
   padding: 20px;

@@ -3,7 +3,7 @@ export default function CategoryForm() {
     <div className="category-form">
       <form>
         <label htmlFor="image" className="form-label">
-          <img src="https://placehold.co/600x400" alt="" />
+          <img src="src\assets\download.png" alt="download-cloud" />
         </label>
         <input
           type="file"
