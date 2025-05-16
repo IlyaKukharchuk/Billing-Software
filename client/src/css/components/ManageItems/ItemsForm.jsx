@@ -3,7 +3,7 @@ export default function ItemsForm() {
     <div className="category-form">
       <form>
         <label htmlFor="image" className="form-label">
-          <img src="https://placehold.co/1800x1400" alt="" />
+          <img src="src\assets\download.png" alt="download-cloud" />
         </label>
         <input
           type="file"
@@ -58,18 +58,7 @@ export default function ItemsForm() {
             name="description"
             id="description"
             className="form-control"
-            placeholder="Category description"
-          />
-        </div>
-        <div className="category-fields description-container color-picker">
-          <label htmlFor="bgcolor" className="form-label">
-            Backgroung color
-          </label>
-          <input
-            type="color"
-            name="bgcolor"
-            id="bgcolor"
-            className="form-control color-picker"
+            placeholder="Write content here..."
           />
         </div>
         <button type="submit" className="submit-btn">

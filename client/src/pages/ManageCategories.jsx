@@ -3,7 +3,7 @@ import CategoryList from "../css/components/ManageCategories/CategoryList";
 import "../css/pages/ManageCategories.css";
 export default function ManageCategories() {
   return (
-    <div className="category-container">
+    <div className="content-container">
       <div className="left-column">
         <CategoryForm />
       </div>
