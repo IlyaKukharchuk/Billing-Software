@@ -8,11 +8,15 @@ export const AppContextProvider = (props) => {
 
   useEffect(() => {
     async function loadData() {
-      const data = await fetchCategories();
-      setCategories(data);
+      try {
+        const response = await fetchCategories();
+        setCategories(response);
+      } catch (error) {
+        console.error("Ошибка загрузки:", error);
+      }
     }
     loadData();
-  });
+  }, []);
 
   const contextValue = {
     categories,

@@ -11,6 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/categories")
+@CrossOrigin(origins = "http://localhost:5173")
 @RequiredArgsConstructor
 public class CategoryController {
     private final CategoryService categoryService;
@@ -23,6 +24,7 @@ public class CategoryController {
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
     public List<CategoryResponse> findAllCategories(){
+        System.out.println("fetching categories...");
         return categoryService.read();
     }
 

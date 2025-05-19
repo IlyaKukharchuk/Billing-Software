@@ -1,5 +1,5 @@
-import ItemsForm from "../css/components/ManageItems/ItemsForm";
-import ItemsList from "../css/components/ManageItems/ItemsList";
+import ItemsForm from "../components/ManageItems/ItemsForm";
+import ItemsList from "../components/ManageItems/ItemsList";
 
 export default function ManageItems() {
   return (

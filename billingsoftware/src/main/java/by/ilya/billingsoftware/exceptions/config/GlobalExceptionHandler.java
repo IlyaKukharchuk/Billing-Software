@@ -1,10 +1,12 @@
 package by.ilya.billingsoftware.exceptions.config;
 
 import by.ilya.billingsoftware.exceptions.CategoryNotFoundException;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.context.request.WebRequest;
 
 @ControllerAdvice
 public class GlobalExceptionHandler {
@@ -16,8 +18,10 @@ public class GlobalExceptionHandler {
     }
 
     @ExceptionHandler(Exception.class)
-    public ResponseEntity<?> handleGlobalException(Exception ex) {
-        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
-                .body(new ErrorResponse("Internal Server Error: " + ex.getMessage()));
+    public ResponseEntity<?> handleException(Exception ex, WebRequest request) {
+        // Добавь CORS-заголовки вручную, если Spring их не добавил
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("Access-Control-Allow-Origin", "http://localhost:5173");
+        return ResponseEntity.status(500).headers(headers).body("Error: " + ex.getMessage());
     }
 }
