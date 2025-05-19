@@ -1,5 +1,5 @@
-import CategoryForm from "../css/components/ManageCategories/CategoryForm";
-import CategoryList from "../css/components/ManageCategories/CategoryList";
+import CategoryForm from "../components/ManageCategories/CategoryForm";
+import CategoryList from "../components/ManageCategories/CategoryList";
 import "../css/pages/ManageCategories.css";
 export default function ManageCategories() {
   return (

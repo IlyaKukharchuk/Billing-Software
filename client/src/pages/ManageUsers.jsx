@@ -1,5 +1,5 @@
-import UsersForm from "../css/components/ManageUsers/UsersForm";
-import UsersList from "../css/components/ManageUsers/UsersList";
+import UsersForm from "../components/ManageUsers/UsersForm";
+import UsersList from "../components/ManageUsers/UsersList";
 import "../css/pages/ManageUsers.css";
 
 export default function ManageUsers() {

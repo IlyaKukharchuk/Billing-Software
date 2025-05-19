@@ -5,7 +5,7 @@ const apiClient = axios.create({ baseURL: API_BASE_URL });
 
 export const fetchCategories = async () => {
   try {
-    const response = await apiClient.get("/");
+    const response = await apiClient.get("");
     return response.data;
   } catch (error) {
     throw new Error(`Failed to fetch categories: ${error.message}`);
