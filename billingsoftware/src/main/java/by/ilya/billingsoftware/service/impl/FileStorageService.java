@@ -54,9 +54,11 @@ public class FileStorageService {
 
     // Удаление файла
     public void deleteFile(String fileUrl) {
-        System.out.println("fileUrl: " + fileUrl);
+        log.info("fileUrl: {}", fileUrl);
+        if(fileUrl == null){
+            return;
+        }
         String key = fileUrl.replaceFirst("^https?://[^/]+/", "");
-        System.out.println("key: " + key);
         try {
             amazonS3.deleteObject(bucketName, key);
             log.info("Файл {} удалён", key);

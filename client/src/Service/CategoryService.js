@@ -24,7 +24,7 @@ export const addCategory = async (category) => {
 export const deleteCategory = async (categoryId) => {
   try {
     const response = await apiClient.delete(`/${categoryId}`);
-    return response.data;
+    return response;
   } catch (error) {
     throw new Error(`Failed to delete category: ${error.message}`);
   }

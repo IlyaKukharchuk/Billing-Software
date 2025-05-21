@@ -49,10 +49,11 @@
   width: 30px;
   transition: 0.1s;
 }
-.item-delete img:hover {
+button.delete-btn:hover img {
   filter: invert(16%) sepia(99%) saturate(7432%) hue-rotate(358deg)
     brightness(97%) contrast(118%);
 }
+
 .item-delete button {
   padding: 0;
   border: none;
@@ -81,4 +82,5 @@
 .input-group {
   display: flex;
   flex-direction: row;
+  margin-top: 10px;
 }

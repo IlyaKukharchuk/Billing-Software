@@ -28,7 +28,7 @@ public class GlobalExceptionHandler {
     public ResponseEntity<?> handleException(Exception ex, WebRequest request) {
         // Добавь CORS-заголовки вручную, если Spring их не добавил
         HttpHeaders headers = new HttpHeaders();
-        headers.add("Access-Control-Allow-Origin", "http://localhost:5173");
-        return ResponseEntity.status(500).headers(headers).body("Error: " + ex.getMessage());
+        return ResponseEntity.status(500)
+                .body("Error: " + ex.getMessage());
     }
 }
