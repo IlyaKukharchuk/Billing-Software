@@ -27,7 +27,8 @@ public class FileStorageService {
         try {
             // Проверка на пустой файл
             if (file.isEmpty()) {
-                throw new IllegalArgumentException("Файл пустой");
+                log.info("Файл пустой");
+                return domen + "/uploads%2Fuknown_item.png";
             }
 
             // Генерация ключа с нормальным именем

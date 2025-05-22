@@ -14,8 +14,8 @@ export const fetchCategories = async () => {
 
 export const addCategory = async (category) => {
   try {
-    const response = await apiClient.post("/", category);
-    return response.data;
+    const response = await apiClient.post("", category);
+    return response;
   } catch (error) {
     throw new Error(`Failed to add category: ${error.message}`);
   }

@@ -67,7 +67,8 @@ export default function CategoryList() {
             </div>
             <div className="item-info">
               <p className="name">{category.name}</p>
-              <p>{category.items} items</p>
+              <p>{category.items ? category.items : 0} items</p>
+              {console.log("category: ", category)}
             </div>
             <div className="item-delete">
               <button
