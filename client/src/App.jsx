@@ -12,7 +12,7 @@ export default function App() {
   return (
     <div>
       <Menubar />
-      <Toaster />
+      <Toaster position="top-left" reverseOrder={false} />
       <Routes>
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/explore" element={<Explore />} />
