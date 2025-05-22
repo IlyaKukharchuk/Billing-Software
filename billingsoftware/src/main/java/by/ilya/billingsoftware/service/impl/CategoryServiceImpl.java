@@ -8,7 +8,9 @@ import by.ilya.billingsoftware.io.CategoryResponse;
 import by.ilya.billingsoftware.repository.CategoryRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
@@ -17,9 +19,17 @@ import java.util.UUID;
 @RequiredArgsConstructor
 public class CategoryServiceImpl implements CategoryService {
     private final CategoryRepository categoryRepository;
+    private final FileStorageService fileStorageService;
     @Override
-    public CategoryResponse add(CategoryRequest request) {
+    public CategoryResponse add(MultipartFile file, CategoryRequest request) {
+        String imgUrl = null;
+        try {
+            imgUrl = fileStorageService.uploadFile(file);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
         CategoryEntity newCategory = convertToEntity(request);
+        newCategory.setImgUrl(imgUrl);
         newCategory = categoryRepository.save(newCategory);
         return convertToResponse(newCategory);
     }
@@ -34,7 +44,10 @@ public class CategoryServiceImpl implements CategoryService {
     public void delete(String categoryId) {
         Optional<CategoryEntity> categoryEntityOptional = categoryRepository.findByCategoryId(categoryId);
         categoryEntityOptional.ifPresentOrElse(
-                categoryRepository::delete,
+                categoryEntity -> {
+                    fileStorageService.deleteFile(categoryEntity.getImgUrl());
+                    categoryRepository.delete(categoryEntity);
+                },
                 () -> {
                     throw new CategoryNotFoundException("Нет растения с id: " + categoryId + " потому нельзя его удалить.");
                 }

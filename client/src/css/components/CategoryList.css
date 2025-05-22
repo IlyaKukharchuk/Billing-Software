@@ -1,5 +1,5 @@
 .list-container {
-  height: 100vh;
+  height: 100%;
   overflow-y: auto;
   overflow-x: hidden;
 }
@@ -10,6 +10,7 @@
   margin-top: 10px;
   border-radius: 10px;
   padding: 10px 10px;
+  height: 95px;
 }
 
 .item-image {
@@ -46,16 +47,40 @@
 .item-delete img {
   height: 30px;
   width: 30px;
-  transition: 0.3s;
+  transition: 0.1s;
 }
-.item-delete img:hover {
-  filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg)
-    brightness(118%) contrast(119%);
+button.delete-btn:hover img {
+  filter: invert(16%) sepia(99%) saturate(7432%) hue-rotate(358deg)
+    brightness(97%) contrast(118%);
 }
+
 .item-delete button {
   padding: 0;
   border: none;
   border-radius: 10px;
   height: 38px;
   width: 38px;
+}
+
+.search-bar input {
+  display: block;
+  width: 90%;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  border: var(--bs-border-width) solid var(--bs-border-color);
+  border-radius: var(--bs-border-radius);
+  transition: 0.3s;
+}
+.search-bar span {
+  display: flex;
+  justify-content: center;
+  width: 10%;
+  cursor: pointer;
+}
+.input-group {
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
 }
