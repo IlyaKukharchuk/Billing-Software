@@ -13,12 +13,11 @@ import org.springframework.web.server.ResponseStatusException;
 import java.util.List;
 
 @RestController
-@RequestMapping("/categories")
-//@CrossOrigin(origins = "http://localhost:5173")
+//@RequestMapping("/categories")
 @RequiredArgsConstructor
 public class CategoryController {
     private final CategoryService categoryService;
-    @PostMapping
+    @PostMapping("admin/categories")
     @ResponseStatus(HttpStatus.CREATED)
     public CategoryResponse addCategory(@RequestPart("category") @Valid CategoryRequest request,
                                         @RequestPart("file") MultipartFile file){
@@ -34,7 +33,7 @@ public class CategoryController {
         return categoryService.read();
     }
 
-    @DeleteMapping("/{categoryId}")
+    @DeleteMapping("admin/categories/{categoryId}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void delete(@PathVariable String categoryId){
         categoryService.delete(categoryId);
