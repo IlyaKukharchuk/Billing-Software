@@ -1,4 +1,4 @@
-package by.ilya.billingsoftware.io;
+package by.ilya.billingsoftware.io.out;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

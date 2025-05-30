@@ -1,5 +1,6 @@
 package by.ilya.billingsoftware.entity;
 
+import by.ilya.billingsoftware.entity.enums.Role;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -25,7 +26,8 @@ public class UserEntity {
     private String name;
     private String email;
     private String password;
-    private String role;
+    @Enumerated(EnumType.STRING)
+    private Role role;
     @CreationTimestamp
     @Column(updatable = false)
     private Timestamp createdAt;

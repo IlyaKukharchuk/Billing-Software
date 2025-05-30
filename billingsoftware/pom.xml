@@ -33,7 +33,7 @@
 		<amazonaws.version>1.12.654</amazonaws.version>
 		<jakarta.version>4.0.0</jakarta.version>
 		<spring-security.version>6.4.5</spring-security.version>
-		<jsonwebtoken.version>0.9.1</jsonwebtoken.version>
+		<jsonwebtoken.version>0.12.6</jsonwebtoken.version>
 		<jaxb-api.version>2.3.1</jaxb-api.version>
 	</properties>
 	<dependencies>
