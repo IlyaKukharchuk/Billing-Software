@@ -2,6 +2,7 @@ package by.ilya.billingsoftware.filters;
 
 import by.ilya.billingsoftware.service.impl.AppUserDetailsService;
 import by.ilya.billingsoftware.util.JwtUtil;
+import io.jsonwebtoken.ExpiredJwtException;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -34,24 +35,28 @@ public class JwtRequestFilter extends OncePerRequestFilter {
         }
 
         String jwt = authHeader.substring(7);
-        String email = jwtUtil.extractUsername(jwt);
+        try{
+            String email = jwtUtil.extractUsername(jwt);
 
-        if (email != null && SecurityContextHolder.getContext().getAuthentication() == null) {
-            UserDetails userDetails = appUserDetailsService.loadUserByUsername(email);
-            if (jwtUtil.validateToken(jwt, userDetails)) {
-                UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(
-                        userDetails, null, userDetails.getAuthorities());
-                authenticationToken.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
-                SecurityContextHolder.getContext().setAuthentication(authenticationToken);
-                logger.info("Authenticated user: " + email + ", with roles: " + userDetails.getAuthorities());
+            if (email != null && SecurityContextHolder.getContext().getAuthentication() == null) {
+                UserDetails userDetails = appUserDetailsService.loadUserByUsername(email);
+                if (jwtUtil.validateToken(jwt, userDetails)) {
+                    UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(
+                            userDetails, null, userDetails.getAuthorities());
+                    authenticationToken.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
+                    SecurityContextHolder.getContext().setAuthentication(authenticationToken);
+                    logger.info("Authenticated user: " + email + ", with roles: " + userDetails.getAuthorities());
+                } else {
+                    logger.info("Invalid JWT Token");
+                }
             } else {
-                logger.info("Invalid JWT Token");
+                logger.info("Email is null or Context is not null");
             }
-        } else {
-            logger.info("Email is null or Context is not null");
-        }
 
-        filterChain.doFilter(request, response);
+            filterChain.doFilter(request, response);
+        }catch (ExpiredJwtException exception){
+            logger.error("JWT token is expired", exception);
+        }
     }
 
 }

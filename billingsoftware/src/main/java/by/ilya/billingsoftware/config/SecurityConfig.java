@@ -31,12 +31,14 @@ public class SecurityConfig {
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
-          httpSecurity.cors(Customizer.withDefaults())
+          httpSecurity
+                  .cors(Customizer.withDefaults())
                   .csrf(AbstractHttpConfigurer::disable)
-                  .authorizeHttpRequests(auth -> auth.requestMatchers("/login", "/encode").permitAll()
+                  .authorizeHttpRequests(auth -> auth
+                          .requestMatchers("/login", "/encode").permitAll()
                           .requestMatchers("/categories", "/items").hasAnyRole("USER", "ADMIN")
-//                          .requestMatchers("/admin/**").hasRole("ADMIN")
-                          .requestMatchers("/admin/**").permitAll()
+                          .requestMatchers("/admin/**").hasRole("ADMIN")
+//                          .requestMatchers("/admin/**").permitAll()
                           .anyRequest().authenticated())
                   .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                   .addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class);
