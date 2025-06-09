@@ -45,15 +45,18 @@ public class ItemServiceImpl implements ItemService {
 
     @Override
     public List<ItemResponse> fetchItems() {
-        return itemRepository.findAll().stream()
+        return itemRepository.findAll()
+                .stream()
                 .map(this::convertToResponse)
                 .toList();
     }
 
+    @Transactional
     @Override
     public void deleteItem(String itemId) {
         ItemEntity itemEntity = itemRepository.findByItemId(itemId)
                 .orElseThrow(() -> new RuntimeException("Item with id: " + itemId + "not found."));
+        deleteImage(itemEntity.getImgUrl());
         itemRepository.delete(itemEntity);
     }
 

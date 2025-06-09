@@ -1,13 +1,17 @@
 package by.ilya.billingsoftware.service.impl;
 
-import by.ilya.billingsoftware.exceptions.CategoryNotFoundException;
-import by.ilya.billingsoftware.service.CategoryService;
 import by.ilya.billingsoftware.entity.CategoryEntity;
+import by.ilya.billingsoftware.exceptions.CategoryNotFoundException;
+import by.ilya.billingsoftware.exceptions.FileUploadException;
 import by.ilya.billingsoftware.io.in.CategoryRequest;
 import by.ilya.billingsoftware.io.out.CategoryResponse;
 import by.ilya.billingsoftware.repository.CategoryRepository;
+import by.ilya.billingsoftware.repository.ItemRepository;
+import by.ilya.billingsoftware.service.CategoryService;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
@@ -16,17 +20,21 @@ import java.util.Optional;
 import java.util.UUID;
 
 @Service
+@Slf4j
 @RequiredArgsConstructor
 public class CategoryServiceImpl implements CategoryService {
     private final CategoryRepository categoryRepository;
     private final FileStorageService fileStorageService;
+    private final ItemRepository itemRepository;
+
+    @Transactional
     @Override
     public CategoryResponse add(MultipartFile file, CategoryRequest request) {
         String imgUrl = null;
         try {
             imgUrl = fileStorageService.uploadFile(file);
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            throw new FileUploadException("Failed to upload category image", e);
         }
         CategoryEntity newCategory = convertToEntity(request);
         newCategory.setImgUrl(imgUrl);
@@ -40,6 +48,7 @@ public class CategoryServiceImpl implements CategoryService {
         return categoryEntities.stream().map(this::convertToResponse).toList();
     }
 
+    @Transactional
     @Override
     public void delete(String categoryId) {
         Optional<CategoryEntity> categoryEntityOptional = categoryRepository.findByCategoryId(categoryId);
@@ -54,18 +63,38 @@ public class CategoryServiceImpl implements CategoryService {
         );
     }
 
-    private CategoryResponse convertToResponse(CategoryEntity newCategory) {
+    private CategoryResponse convertToResponse(CategoryEntity category) {
+        if (category == null) {
+            throw new IllegalArgumentException("Category entity cannot be null");
+        }
+
+        Long categoryId = null;
+        try {
+            categoryId = Long.valueOf(category.getCategoryId());
+        } catch (NumberFormatException e) {
+            log.warn("Invalid category ID format: {}", category.getCategoryId());
+        }
+
+        Integer itemsCount = 0;
+        if (categoryId != null) {
+            try {
+                itemsCount = itemRepository.countByCategoryId(categoryId);
+            } catch (Exception e) {
+                log.error("Failed to count items for category {}: {}", categoryId, e.getMessage());
+            }
+        }
+
         return CategoryResponse.builder()
-                .bgColor(newCategory.getBgColor())
-                .categoryId(newCategory.getCategoryId())
-                .createdAt(newCategory.getCreatedAt())
-                .description(newCategory.getDescription())
-                .imgUrl(newCategory.getImgUrl())
-                .name(newCategory.getName())
-                .updatedAt(newCategory.getUpdatedAt())
+                .bgColor(category.getBgColor())
+                .categoryId(category.getCategoryId())
+                .createdAt(category.getCreatedAt())
+                .description(category.getDescription())
+                .imgUrl(category.getImgUrl())
+                .name(category.getName())
+                .updatedAt(category.getUpdatedAt())
+                .itemsCount(itemsCount)
                 .build();
     }
-
     private CategoryEntity convertToEntity(CategoryRequest request) {
         return CategoryEntity.builder()
                 .bgColor(request.getBgColor())

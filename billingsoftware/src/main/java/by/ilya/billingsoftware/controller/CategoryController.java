@@ -22,12 +22,12 @@ public class CategoryController {
     public CategoryResponse addCategory(@RequestPart("category") @Valid CategoryRequest request,
                                         @RequestPart("file") MultipartFile file){
         if (file.isEmpty()) {
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Файл пустой");
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "file is empty");
         }
         return categoryService.add(file, request);
     }
 
-    @GetMapping
+    @GetMapping("/categories")
     @ResponseStatus(HttpStatus.OK)
     public List<CategoryResponse> findAllCategories(){
         return categoryService.read();
@@ -35,7 +35,7 @@ public class CategoryController {
 
     @DeleteMapping("admin/categories/{categoryId}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void delete(@PathVariable String categoryId){
+    public void deleteCategory(@PathVariable String categoryId){
         categoryService.delete(categoryId);
     }
 }
