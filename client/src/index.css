@@ -25,11 +25,17 @@ body {
     width: 100% !important;
     margin-top: 20px;
   }
+  .login-bg {
+    min-height: calc(100vh - 65.99px) !important;
+  }
 }
 
 /* Tablets и маленькие лаптопы */
 @media (min-width: 768px) and (max-width: 991px) {
   /* Стили под планшеты и компактные устройства */
+  .login-bg {
+    min-height: calc(100vh - 65.99px) !important;
+  }
 }
 
 /* Desktop */

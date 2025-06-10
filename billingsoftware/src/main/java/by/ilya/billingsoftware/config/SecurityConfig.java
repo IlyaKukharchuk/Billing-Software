@@ -32,29 +32,30 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
           httpSecurity
-                  .cors(Customizer.withDefaults())
+                  .cors(cors -> cors.configurationSource(corsConfigurationSource()))
                   .csrf(AbstractHttpConfigurer::disable)
                   .authorizeHttpRequests(auth -> auth
                           .requestMatchers("/login", "/encode").permitAll()
                           .requestMatchers("/categories", "/items").hasAnyRole("USER", "ADMIN")
                           .requestMatchers("/admin/**").hasRole("ADMIN")
-//                          .requestMatchers("/admin/**").permitAll()
                           .anyRequest().authenticated())
                   .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                   .addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class);
           return httpSecurity.build();
     }
 
-    @Bean
-    public CorsFilter corsFilter(){
-        return new CorsFilter(corsConfigurationSource());
-    }
-
     private UrlBasedCorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration config = new CorsConfiguration();
-        config.setAllowedOrigins(List.of("http://localhost:5173/"));
-        config.setAllowedMethods(List.of("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"));
-        config.setAllowedHeaders(List.of("Authorization", "Content-Type "));
+        config.setAllowedOrigins(List.of("http://localhost:5173"));
+        config.setAllowedMethods(List.of("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS", "HEAD"));
+        config.setAllowedHeaders(List.of(
+                "Authorization",
+                "Content-Type",
+                "Accept",
+                "X-Requested-With",
+                "Cache-Control"
+        ));
+        config.setMaxAge(3600L); // 1 час кеша для preflight
         config.setAllowCredentials(true);
 
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();

@@ -1,0 +1,40 @@
+.login-bg {
+  min-height: calc(100vh - 71.97px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.5),
+      rgba(255, 255, 255, 0.5)
+    ),
+    url("../../assets/login-bg.webp");
+  background-size: cover;
+  background-position: center;
+}
+
+.card {
+  background-color: #fff;
+  width: 100%;
+  max-width: 480px;
+  border: none;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.card-body {
+  padding: 2rem;
+}
+
+.card-title {
+  text-align: center;
+}
+
+.card-text {
+  text-align: center;
+  opacity: 0.8;
+}
+
+.form-element {
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+}
