@@ -12,6 +12,7 @@ import by.ilya.billingsoftware.repository.ItemRepository;
 import by.ilya.billingsoftware.service.ItemService;
 import jakarta.validation.constraints.NotNull;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
@@ -21,6 +22,7 @@ import java.util.List;
 import java.util.UUID;
 
 @Service
+@Slf4j
 @RequiredArgsConstructor
 public class ItemServiceImpl implements ItemService {
     private final FileStorageService fileStorageService;
@@ -34,10 +36,11 @@ public class ItemServiceImpl implements ItemService {
                 .orElseThrow(() -> new CategoryNotFoundException("Category not found, id: " + request.getCategoryId()));
         String imgUrl = uploadImage(file);
         ItemEntity newItem = convertToEntity(request, category, imgUrl);
-        try{
+        try {
             newItem = itemRepository.save(newItem);
+            log.info("Saved item with ID: {}", newItem.getItemId());
             return convertToResponse(newItem);
-        }catch (Exception e){
+        } catch (Exception e) {
             deleteImage(imgUrl);
             throw new ItemSaveException("Unable to save item: " + newItem, e);
         }
@@ -45,10 +48,9 @@ public class ItemServiceImpl implements ItemService {
 
     @Override
     public List<ItemResponse> fetchItems() {
-        return itemRepository.findAll()
-                .stream()
-                .map(this::convertToResponse)
-                .toList();
+        List<ItemEntity> items = itemRepository.findAll();
+        log.info("Fetched items: {}", items);
+        return items.stream().map(this::convertToResponse).toList();
     }
 
     @Transactional

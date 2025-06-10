@@ -64,29 +64,10 @@ public class CategoryServiceImpl implements CategoryService {
     }
 
     private CategoryResponse convertToResponse(CategoryEntity category) {
-        if (category == null) {
-            throw new IllegalArgumentException("Category entity cannot be null");
-        }
-
-        Long categoryId = null;
-        try {
-            categoryId = Long.valueOf(category.getCategoryId());
-        } catch (NumberFormatException e) {
-            log.warn("Invalid category ID format: {}", category.getCategoryId());
-        }
-
-        Integer itemsCount = 0;
-        if (categoryId != null) {
-            try {
-                itemsCount = itemRepository.countByCategoryId(categoryId);
-            } catch (Exception e) {
-                log.error("Failed to count items for category {}: {}", categoryId, e.getMessage());
-            }
-        }
-
+        Integer itemsCount = countItemsInCategory(category);
         return CategoryResponse.builder()
                 .bgColor(category.getBgColor())
-                .categoryId(category.getCategoryId())
+                .categoryId(category.getCategoryId()) // UUID как было
                 .createdAt(category.getCreatedAt())
                 .description(category.getDescription())
                 .imgUrl(category.getImgUrl())
@@ -94,6 +75,19 @@ public class CategoryServiceImpl implements CategoryService {
                 .updatedAt(category.getUpdatedAt())
                 .itemsCount(itemsCount)
                 .build();
+    }
+    private Integer countItemsInCategory(CategoryEntity category){
+        if (category == null) {
+            throw new IllegalArgumentException("Category entity cannot be null");
+        }
+
+        Integer itemsCount = 0;
+        try {
+            itemsCount = itemRepository.countByCategoryId(category.getId()); // Используем Long id
+        } catch (Exception e) {
+            log.error("Failed to count items for category {}: {}", category.getId(), e.getMessage());
+        }
+        return itemsCount;
     }
     private CategoryEntity convertToEntity(CategoryRequest request) {
         return CategoryEntity.builder()
