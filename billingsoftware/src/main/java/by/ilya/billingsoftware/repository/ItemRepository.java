@@ -7,5 +7,5 @@ import java.util.Optional;
 
 public interface ItemRepository extends JpaRepository<ItemEntity, Long> {
     Optional<ItemEntity> findByItemId(String id);
-    Integer countByCategoryId(String id);
+    Integer countByCategoryId(Long id);
 }
