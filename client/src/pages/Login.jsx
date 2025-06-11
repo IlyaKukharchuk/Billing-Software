@@ -27,6 +27,7 @@ export default function Login() {
       const response = await login(data);
       setAuthData(response.data.token, response.data.role);
       navigate("/dashboard");
+      window.location.reload();
     } catch (error) {
       console.error(error);
       toast.error("Email/Password Invalid");

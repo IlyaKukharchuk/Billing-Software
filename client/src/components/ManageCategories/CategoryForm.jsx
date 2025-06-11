@@ -80,7 +80,6 @@ export default function CategoryForm() {
       if (response.status === 201) {
         setCategories([...categories, response.data]);
         toast.success("Category added");
-        console.log("Category added");
         setData({ name: "", description: "", bgColor: "#212529" });
         setImage(null);
       }

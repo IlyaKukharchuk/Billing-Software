@@ -1,10 +1,14 @@
 import { createContext, useEffect, useState } from "react";
 import { fetchCategories } from "../Service/CategoryService";
+import { fetchItems } from "../Service/ItemService";
+import { fetchUsers } from "../Service/UserService";
 
 export const AppContext = createContext(null);
 
 export const AppContextProvider = (props) => {
   const [categories, setCategories] = useState([]);
+  const [items, setItems] = useState([]);
+  const [users, setUsers] = useState([]);
   const [auth, setAuth] = useState({
     token: null,
     role: null,
@@ -13,8 +17,12 @@ export const AppContextProvider = (props) => {
   useEffect(() => {
     async function loadData() {
       try {
-        const response = await fetchCategories();
-        setCategories(response);
+        const fetchCategoriesResponse = await fetchCategories();
+        setCategories(fetchCategoriesResponse);
+        const fetchItemsResponse = await fetchItems();
+        setItems(fetchItemsResponse);
+        const fetchUsersResponse = await fetchUsers();
+        setUsers(fetchUsersResponse);
       } catch (error) {
         console.error("Ошибка загрузки:", error);
       }
@@ -31,6 +39,10 @@ export const AppContextProvider = (props) => {
     setCategories,
     auth,
     setAuthData,
+    items,
+    setItems,
+    users,
+    setUsers,
   };
 
   return (
