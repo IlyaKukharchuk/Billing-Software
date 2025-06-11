@@ -28,11 +28,13 @@ public class ItemController {
     }
 
     @GetMapping("/items")
+    @ResponseStatus(HttpStatus.OK)
     public List<ItemResponse> readItems(){
         return itemService.fetchItems();
     }
 
     @DeleteMapping("/admin/items/{itemId}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteItem(@PathVariable String itemId){
         try {
            itemService.deleteItem(itemId);
