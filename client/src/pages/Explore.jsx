@@ -3,7 +3,7 @@ import "../css/pages/Explore.css";
 import { assets } from "../assets/assets";
 import { AppContext } from "../context/AppContext";
 import toast from "react-hot-toast";
-import { deleteItem } from "../Service/ItemService";
+import { deleteItem } from "../service/ItemService";
 
 export default function Explore() {
   const { categories, items } = useContext(AppContext);
@@ -214,7 +214,7 @@ export default function Explore() {
                 <div className="cart-item-info">
                   <span className="cart-item-name">{item.name}</span>
                   <span className="cart-item-price">
-                    ₹{item.price.toFixed(2)}
+                    ${item.price.toFixed(2)}
                   </span>
                 </div>
                 <div className="cart-item-controls">
@@ -241,15 +241,15 @@ export default function Explore() {
           <hr className="bold-hr" />
           <div className="calculation-row">
             <span>Item:</span>
-            <span>₹{subtotal.toFixed(2)}</span>
+            <span>${subtotal.toFixed(2)}</span>
           </div>
           <div className="calculation-row">
             <span>Tax (1%):</span>
-            <span>₹{tax.toFixed(2)}</span>
+            <span>${tax.toFixed(2)}</span>
           </div>
           <div className="calculation-row total">
             <span>Total:</span>
-            <span>₹{total.toFixed(2)}</span>
+            <span>${total.toFixed(2)}</span>
           </div>
           <div className="payment-methods">
             <button

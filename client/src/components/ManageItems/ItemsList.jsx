@@ -3,7 +3,7 @@ import { AppContext } from "../../context/AppContext";
 import "../../css/components/CategoryList.css";
 import deleteIcon from "../../assets/delete-cross.svg";
 import toast from "react-hot-toast";
-import { deleteItem } from "../../Service/ItemService";
+import { deleteItem } from "../../service/ItemService";
 
 export default function ItemsList() {
   const { items, setItems } = useContext(AppContext);
