@@ -74,10 +74,9 @@ public class UserServiceImpl implements UserService {
     }
 
     private Role roleDetector(String role) {
-        if (role.equals("ADMIN")) {
-            return Role.ADMIN;
-        }else {
-            return Role.USER;
+        if (role == null) {
+            return Role.USER; // Дефолтная роль
         }
+        return Role.valueOf(role.toUpperCase());
     }
 }

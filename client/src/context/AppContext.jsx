@@ -1,7 +1,7 @@
 import { createContext, useEffect, useState } from "react";
-import { fetchCategories } from "../Service/CategoryService";
-import { fetchItems } from "../Service/ItemService";
-import { fetchUsers } from "../Service/UserService";
+import { fetchCategories } from "../service/CategoryService";
+import { fetchItems } from "../service/ItemService";
+import { fetchUsers } from "../service/UserService";
 
 export const AppContext = createContext(null);
 

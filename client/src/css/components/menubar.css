@@ -29,3 +29,40 @@
 .btn-outline-light {
   border-radius: 0 20px 20px 0;
 }
+
+.profile {
+  color: #fff;
+  text-transform: uppercase;
+  cursor: pointer;
+  user-select: none;
+}
+
+.dropdown-content {
+  z-index: 1;
+  position: absolute;
+  right: 0;
+  background-color: #212529;
+  margin-top: 24px;
+  width: 140px;
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  flex-direction: column;
+}
+.dropdown-item {
+  padding: 20px 0 !important;
+  transition: 0.4s;
+  width: 100%;
+  display: flex !important;
+  justify-content: center !important;
+  justify-items: center !important;
+}
+
+.dropdown-item:hover {
+  background-color: #97a8b8 !important;
+}
+
+.dropdown-limiter {
+  width: 82.59px;
+  margin-left: 25px;
+}

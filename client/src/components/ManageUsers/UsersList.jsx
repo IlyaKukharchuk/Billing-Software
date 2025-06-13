@@ -1,8 +1,8 @@
 import { useContext, useState } from "react";
 import { AppContext } from "../../context/AppContext";
 import deleteIcon from "../../assets/delete-cross.svg";
+import "../../css/components/CategoryList.css";
 import toast from "react-hot-toast";
-import { deleteItem } from "../../Service/ItemService";
 import { deleteUser } from "../../Service/UserService";
 import { assets } from "../../assets/assets";
 
@@ -16,7 +16,7 @@ export default function UsersList() {
     user.name.toLowerCase().includes(searchData.toLowerCase())
   );
 
-  const deleteByItemId = async (userId) => {
+  const deleteByUserId = async (userId) => {
     try {
       const response = await deleteUser(userId);
       if (response.status === 204) {
@@ -56,35 +56,31 @@ export default function UsersList() {
         <hr />
         {filterUsers.map((user, index) => (
           <div
-            className="list-user"
+            className="list-item"
             key={user.userId}
             style={{ backgroundColor: "#97a8b8" }}
           >
-            <div className="user-image">
+            <div className="item-image">
               <img
                 src={assets.user}
                 alt={user.name}
                 className="categoty-user-img"
               />
             </div>
-            <div className="user-info">
+            <div className="item-info">
               <p className="name">
-                {user.name}{" "}
-                <span className="grey-text">({user.categoryName})</span>
+                {user.name} <span className="grey-text">({user.role})</span>
               </p>
-              <p>{user.price}$</p>
+              <p>{user.email}</p>
             </div>
-            <div className="user-delete">
+            <div className="item-delete">
               <button
-                style={{ backgroundColor: user.bgColor }}
                 className="delete-btn"
-                onClick={() => deleteByItemId(user.itemId)}
+                onClick={() => deleteByUserId(user.userId)}
               >
                 <img src={deleteIcon} alt="delete icon" />
               </button>
             </div>
-
-            <p>{user.bgcolor}</p>
           </div>
         ))}
       </div>
