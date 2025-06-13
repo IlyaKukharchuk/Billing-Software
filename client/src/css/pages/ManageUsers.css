@@ -1,121 +1,22 @@
-.form-label img {
-  width: 64px;
-  height: 64px;
-}
-.category-fields {
-  margin-top: 5px;
-}
-.category-fields.description-container {
-  margin-top: 5px;
-}
-
-.color-picker input {
-  border: 0;
-  width: 130px;
-  height: 50px;
-  padding: 0;
-}
-
 .submit-btn {
-  background-color: #212529;
-  color: #fff;
-  margin-top: 20px;
-  border-radius: 6px;
   padding: 10px;
-  width: 100%;
-  transition: 0.35s;
-}
-
-.submit-btn:hover {
-  background-color: #343638;
-}
-
-.delete-btn {
   background-color: #212529;
-}
-.list-container {
-  height: 100%;
-  overflow-y: auto;
-  overflow-x: hidden;
-}
-
-.list-item {
-  width: 100%;
-  display: flex;
-  margin-top: 10px;
-  border-radius: 10px;
-  padding: 10px 10px;
-  height: 95px;
-}
-
-.item-image {
-  display: flex;
-  justify-content: center;
-  width: 20%;
-  padding: 5px;
-}
-.categoty-item-img {
-  max-width: 100%;
-  height: auto;
-  object-fit: contain;
-}
-.item-info {
-  width: 60%;
-  padding: 10px 5px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-.item-info p {
-  padding: 0;
-  margin: 0;
-}
-.item-info .name {
-  font-size: 20px;
-}
-.item-delete {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 20%;
-}
-.item-delete img {
-  height: 30px;
-  width: 30px;
-  transition: 0.1s;
-}
-button.delete-btn:hover img {
-  filter: invert(16%) sepia(99%) saturate(7432%) hue-rotate(358deg)
-    brightness(97%) contrast(118%);
-}
-
-.item-delete button {
-  padding: 0;
   border: none;
   border-radius: 10px;
-  height: 38px;
-  width: 38px;
+  color: #fff;
+  margin-top: 10px;
+  width: 100%;
 }
 
-.search-bar input {
-  display: block;
-  width: 90%;
-  padding: 0.375rem 0.75rem;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.5;
-  border: var(--bs-border-width) solid var(--bs-border-color);
-  border-radius: var(--bs-border-radius);
-  transition: 0.3s;
+.form-label img {
+  width: 88px;
+  height: 88px;
 }
-.search-bar span {
-  display: flex;
-  justify-content: center;
-  width: 10%;
-  cursor: pointer;
+
+.form-control.color-picker {
+  height: 60px;
 }
-.input-group {
-  display: flex;
-  flex-direction: row;
-  margin-top: 10px;
+
+.category-fields {
+  margin-bottom: 10px;
 }

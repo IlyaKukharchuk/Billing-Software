@@ -1,9 +1,11 @@
 import { Link, useLocation } from "react-router-dom";
 import { assets } from "../assets/assets";
 import "../css/components/menubar.css";
+import { useState } from "react";
 
 export default function Menubar() {
   const location = useLocation();
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark px-2">
@@ -80,6 +82,41 @@ export default function Menubar() {
             </Link>
           </li>
         </ul>
+        <div className="profile" onClick={() => setIsOpen(!isOpen)}>
+          Profile {isOpen ? "▲" : "▼"}
+          {isOpen ? (
+            <div className="dropdown-content">
+              <div className="dropdown-item">
+                <div className="dropdown-limiter">
+                  <Link
+                    to="/login"
+                    className={
+                      location.pathname === "/login"
+                        ? "nav-link active"
+                        : "nav-link"
+                    }
+                  >
+                    Login
+                  </Link>
+                </div>
+              </div>
+              <div
+                className="dropdown-item"
+                onClick={() => {
+                  // Удаляем только нужные данные
+                  localStorage.removeItem("token");
+                  localStorage.removeItem("role");
+
+                  window.location.href = "/login"; // Жесткий редирект (сбрасывает состояние React)
+                }}
+              >
+                <div className="dropdown-limiter">Logout</div>
+              </div>
+            </div>
+          ) : (
+            ""
+          )}
+        </div>
         {/* TODO: dropdown for user profile */}
       </div>
     </nav>

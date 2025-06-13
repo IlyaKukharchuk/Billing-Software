@@ -78,8 +78,6 @@ export default function CategoryList() {
                 <img src={deleteIcon} alt="delete icon" />
               </button>
             </div>
-
-            <p>{category.bgcolor}</p>
           </div>
         ))}
       </div>

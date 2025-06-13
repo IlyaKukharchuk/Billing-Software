@@ -21,7 +21,6 @@ public class UserController {
     @ResponseStatus(HttpStatus.CREATED)
     public UserResponse registerUser(@RequestBody UserRequest request){
         try {
-            System.out.println("begin register User");
             return userService.createUser(request);
         }catch (Exception e){
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Unable to create user " + e.getMessage());

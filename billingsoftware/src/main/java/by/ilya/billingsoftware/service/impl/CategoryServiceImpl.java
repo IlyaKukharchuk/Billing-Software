@@ -54,8 +54,8 @@ public class CategoryServiceImpl implements CategoryService {
         Optional<CategoryEntity> categoryEntityOptional = categoryRepository.findByCategoryId(categoryId);
         categoryEntityOptional.ifPresentOrElse(
                 categoryEntity -> {
-                    fileStorageService.deleteFile(categoryEntity.getImgUrl());
                     categoryRepository.delete(categoryEntity);
+                    fileStorageService.deleteFile(categoryEntity.getImgUrl());
                 },
                 () -> {
                     throw new CategoryNotFoundException("Нет растения с id: " + categoryId + " потому нельзя его удалить.");

@@ -80,8 +80,6 @@ export default function ItemsList() {
                 <img src={deleteIcon} alt="delete icon" />
               </button>
             </div>
-
-            <p>{item.bgcolor}</p>
           </div>
         ))}
       </div>
