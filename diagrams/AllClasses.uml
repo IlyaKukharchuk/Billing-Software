@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>D:/fullstack/React + Java/billingsoftware</OriginalElement>
+  <nodes>
+    <node x="631.5" y="3442.5">by.ilya.billingsoftware.service.impl.FileStorageService</node>
+    <node x="681.6446808510641" y="2134.5">by.ilya.billingsoftware.util.JwtUtil</node>
+    <node x="-147.5" y="3570.5">by.ilya.billingsoftware.service.CategoryService</node>
+    <node x="1058.144680851064" y="2454.5">by.ilya.billingsoftware.config.PassEncoder</node>
+    <node x="935.1446808510641" y="1794.5">by.ilya.billingsoftware.BillingsoftwareApplication</node>
+    <node x="574.6446808510641" y="1812.0">by.ilya.billingsoftware.BillingsoftwareApplicationTests</node>
+    <node x="145.73496080627115" y="1209.5">by.ilya.billingsoftware.entity.UserEntity</node>
+    <node x="122.23496080627115" y="842.9641209406495">by.ilya.billingsoftware.entity.enums.Role</node>
+    <node x="973.3495408734607" y="873.4999999999999">by.ilya.billingsoftware.io.in.ItemRequest</node>
+    <node x="952.6446808510641" y="2712.0">by.ilya.billingsoftware.filters.JwtRequestFilter</node>
+    <node x="834.0509294512881" y="1370.0">by.ilya.billingsoftware.io.in.AuthRequest</node>
+    <node x="1162.144680851064" y="1233.5">by.ilya.billingsoftware.io.out.UserResponse</node>
+    <node x="164.6446808510641" y="1642.5">by.ilya.billingsoftware.repository.UserRepository</node>
+    <node x="1254.144680851064" y="2913.4201343785">by.ilya.billingsoftware.config.SecurityConfig</node>
+    <node x="367.5" y="3594.5">by.ilya.billingsoftware.repository.CategoryRepository</node>
+    <node x="399.1446808510641" y="2194.5">by.ilya.billingsoftware.exceptions.config.ErrorResponse</node>
+    <node x="697.0" y="3069.5">by.ilya.billingsoftware.io.in.UserRequest</node>
+    <node x="1480.144680851064" y="1839.5">by.ilya.billingsoftware.io.out.AuthResponse</node>
+    <node x="777.5" y="3582.5">by.ilya.billingsoftware.repository.ItemRepository</node>
+    <node x="1269.0" y="3830.5">by.ilya.billingsoftware.controller.ItemController</node>
+    <node x="882.5" y="3830.5">by.ilya.billingsoftware.service.impl.ItemServiceImpl</node>
+    <node x="326.1446808510641" y="1014.5">by.ilya.billingsoftware.config.S3Config</node>
+    <node x="58.5" y="3021.5">by.ilya.billingsoftware.io.out.CategoryResponse</node>
+    <node x="574.6446808510641" y="859.7962992161256">by.ilya.billingsoftware.exceptions.ItemSaveException</node>
+    <node x="-136.0" y="3830.5">by.ilya.billingsoftware.controller.CategoryController</node>
+    <node x="1224.644680851064" y="2039.5">by.ilya.billingsoftware.controller.UserController</node>
+    <node x="1295.144680851064" y="2682.5">by.ilya.billingsoftware.controller.AuthController</node>
+    <node x="1182.5" y="3570.5">by.ilya.billingsoftware.service.ItemService</node>
+    <node x="509.1446808510641" y="1994.5">by.ilya.billingsoftware.service.impl.AppUserDetailsService</node>
+    <node x="574.6446808510641" y="1002.0000000000001">by.ilya.billingsoftware.exceptions.AmazonS3Exception</node>
+    <node x="574.6446808510641" y="950.3036893169092">by.ilya.billingsoftware.exceptions.CategoryNotFoundException</node>
+    <node x="574.6446808510641" y="901.0">by.ilya.billingsoftware.exceptions.FileUploadException</node>
+    <node x="352.5" y="3830.5">by.ilya.billingsoftware.service.impl.CategoryServiceImpl</node>
+    <node x="306.6446808510641" y="2430.5">by.ilya.billingsoftware.exceptions.config.GlobalExceptionHandler</node>
+    <node x="383.5" y="3081.5">by.ilya.billingsoftware.io.in.CategoryRequest</node>
+    <node x="21.644680851064095" y="2561.5">by.ilya.billingsoftware.entity.CategoryEntity</node>
+    <node x="1129.144680851064" y="1618.5">by.ilya.billingsoftware.service.UserService</node>
+    <node x="1029.822340425532" y="3068.5">by.ilya.billingsoftware.entity.ItemEntity</node>
+    <node x="869.1446808510641" y="1958.5">by.ilya.billingsoftware.service.impl.UserServiceImpl</node>
+    <node x="1343.644680851064" y="3033.5">by.ilya.billingsoftware.io.out.ItemResponse</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="by.ilya.billingsoftware.repository.UserRepository" target="by.ilya.billingsoftware.entity.UserEntity" relationship="DEPENDENCY">
+      <point x="0.0" y="-43.5" />
+      <point x="322.1446808510641" y="1446.0" />
+      <point x="252.73496080627115" y="1446.0" />
+      <point x="0.0" y="164.5" />
+    </edge>
+    <edge source="by.ilya.billingsoftware.service.impl.UserServiceImpl" target="by.ilya.billingsoftware.entity.UserEntity" relationship="DEPENDENCY">
+      <point x="0.0" y="-67.5" />
+      <point x="1022.1446808510641" y="1926.0" />
+      <point x="902.1446808510641" y="1926.0" />
+      <point x="902.1446808510641" y="1906.0" />
+      <point x="502.1446808510641" y="1906.0" />
+      <point x="502.1446808510641" y="1626.0" />
+      <point x="322.1446808510641" y="1626.0" />
+      <point x="322.1446808510641" y="1446.0" />
+      <point x="252.73496080627115" y="1446.0" />
+      <point x="0.0" y="164.5" />
+    </edge>
+    <edge source="by.ilya.billingsoftware.controller.ItemController" target="by.ilya.billingsoftware.service.ItemService" relationship="TO_ONE">
+      <point x="-91.5" y="-55.5" />
+      <point x="1360.5" y="3806.0" />
+      <point x="1436.75" y="3806.0" />
+      <point x="84.75" y="55.5" />
+    </edge>
+    <edge source="by.ilya.billingsoftware.filters.JwtRequestFilter" target="by.ilya.billingsoftware.util.JwtUtil" relationship="TO_ONE">
+      <point x="0.0" y="-14.0" />
+      <point x="1042.144680851064" y="2346.0" />
+      <point x="842.1446808510641" y="2346.0" />
+      <point x="0.0" y="91.5" />
+    </edge>
+    <edge source="by.ilya.billingsoftware.service.impl.CategoryServiceImpl" target="by.ilya.billingsoftware.entity.CategoryEntity" relationship="DEPENDENCY">
+      <point x="0.0" y="-55.5" />
+      <point x="552.0" y="3806.0" />
+      <point x="362.1446808510641" y="3806.0" />
+      <point x="362.1446808510641" y="2926.0" />
+      <point x="81.8946808510641" y="2926.0" />
+      <point x="-60.25" y="164.5" />
+    </edge>
+    <edge source="by.ilya.billingsoftware.entity.UserEntity" target="by.ilya.billingsoftware.entity.enums.Role" relationship="TO_ONE">
+      <point x="0.0" y="-164.5" />
+      <point x="252.73496080627115" y="846.0" />
+      <point x="165.73496080627115" y="846.0" />
+      <point x="-43.5" y="57.5" />
+    </edge>
+    <edge source="by.ilya.billingsoftware.config.SecurityConfig" target="by.ilya.billingsoftware.filters.JwtRequestFilter" relationship="TO_ONE">
+      <point x="0.0" y="-43.5" />
+      <point x="1442.144680851064" y="2986.0" />
+      <point x="1042.144680851064" y="2986.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="by.ilya.billingsoftware.config.SecurityConfig" target="by.ilya.billingsoftware.service.impl.AppUserDetailsService" relationship="TO_ONE">
+      <point x="0.0" y="-43.5" />
+      <point x="1442.144680851064" y="2986.0" />
+      <point x="1042.144680851064" y="2986.0" />
+      <point x="1042.144680851064" y="2766.0" />
+      <point x="922.1446808510641" y="2766.0" />
+      <point x="922.1446808510641" y="2366.0" />
+      <point x="662.1446808510641" y="2366.0" />
+      <point x="0.0" y="31.5" />
+    </edge>
+    <edge source="by.ilya.billingsoftware.config.SecurityConfig" target="by.ilya.billingsoftware.config.PassEncoder" relationship="TO_ONE">
+      <point x="0.0" y="-43.5" />
+      <point x="1442.144680851064" y="2935.3096286315786" />
+      <point x="1042.144680851064" y="2935.3096286315786" />
+      <point x="1042.144680851064" y="2766.0" />
+      <point x="1202.144680851064" y="2766.0" />
+      <point x="0.0" y="31.5" />
+    </edge>
+    <edge source="by.ilya.billingsoftware.controller.AuthController" target="by.ilya.billingsoftware.util.JwtUtil" relationship="TO_ONE">
+      <point x="-83.5" y="-43.5" />
+      <point x="1378.644680851064" y="2426.0" />
+      <point x="1202.144680851064" y="2426.0" />
+      <point x="1202.144680851064" y="2366.0" />
+      <point x="1042.144680851064" y="2366.0" />
+      <point x="1042.144680851064" y="2346.0" />
+      <point x="842.1446808510641" y="2346.0" />
+      <point x="0.0" y="91.5" />
+    </edge>
+    <edge source="by.ilya.billingsoftware.controller.ItemController" target="by.ilya.billingsoftware.io.out.ItemResponse" relationship="DEPENDENCY">
+      <point x="91.5" y="-55.5" />
+      <point x="1543.5" y="3806.0" />
+      <point x="1552.0" y="3806.0" />
+      <point x="1552.0" y="3546.0" />
+      <point x="1462.144680851064" y="3546.0" />
+      <point x="0.0" y="176.5" />
+    </edge>
+    <edge source="by.ilya.billingsoftware.service.impl.ItemServiceImpl" target="by.ilya.billingsoftware.io.out.ItemResponse" relationship="DEPENDENCY">
+      <point x="0.0" y="-55.5" />
+      <point x="1052.0" y="3806.0" />
+      <point x="1112.0" y="3806.0" />
+      <point x="1112.0" y="3786.0" />
+      <point x="1152.0" y="3786.0" />
+      <point x="1152.0" y="3546.0" />
+      <point x="1462.144680851064" y="3546.0" />
+      <point x="0.0" y="176.5" />
+    </edge>
+    <edge source="by.ilya.billingsoftware.controller.AuthController" target="by.ilya.billingsoftware.service.UserService" relationship="TO_ONE">
+      <point x="-83.5" y="-43.5" />
+      <point x="1378.644680851064" y="2426.0" />
+      <point x="1202.144680851064" y="2426.0" />
+      <point x="1202.144680851064" y="2146.0" />
+      <point x="1302.144680851064" y="2146.0" />
+      <point x="1302.144680851064" y="1786.0" />
+      <point x="1358.644680851064" y="1786.0" />
+      <point x="76.5" y="67.5" />
+    </edge>
+    <edge source="by.ilya.billingsoftware.service.impl.UserServiceImpl" target="by.ilya.billingsoftware.entity.enums.Role" relationship="DEPENDENCY">
+      <point x="0.0" y="-67.5" />
+      <point x="1022.1446808510641" y="1926.0" />
+      <point x="902.1446808510641" y="1926.0" />
+      <point x="902.1446808510641" y="1906.0" />
+      <point x="542.1446808510641" y="1906.0" />
+      <point x="542.1446808510641" y="866.0" />
+      <point x="252.73496080627115" y="866.0" />
+      <point x="43.5" y="57.5" />
+    </edge>
+    <edge source="by.ilya.billingsoftware.service.impl.UserServiceImpl" target="by.ilya.billingsoftware.repository.UserRepository" relationship="TO_ONE">
+      <point x="-102.0" y="-67.5" />
+      <point x="920.1446808510641" y="1866.0" />
+      <point x="462.1446808510641" y="1866.0" />
+      <point x="462.1446808510641" y="1766.0" />
+      <point x="322.1446808510641" y="1766.0" />
+      <point x="0.0" y="43.5" />
+    </edge>
+    <edge source="by.ilya.billingsoftware.controller.CategoryController" target="by.ilya.billingsoftware.service.CategoryService" relationship="TO_ONE">
+      <point x="-114.0" y="-55.5" />
+      <point x="-22.0" y="3806.0" />
+      <point x="-47.75" y="3806.0" />
+      <point x="-99.75" y="55.5" />
+    </edge>
+    <edge source="by.ilya.billingsoftware.service.impl.ItemServiceImpl" target="by.ilya.billingsoftware.entity.ItemEntity" relationship="DEPENDENCY">
+      <point x="0.0" y="-55.5" />
+      <point x="1052.0" y="3806.0" />
+      <point x="1112.0" y="3806.0" />
+      <point x="1112.0" y="3546.0" />
+      <point x="1135.322340425532" y="3546.0" />
+      <point x="0.0" y="176.5" />
+    </edge>
+    <edge source="by.ilya.billingsoftware.service.impl.CategoryServiceImpl" target="by.ilya.billingsoftware.repository.CategoryRepository" relationship="TO_ONE">
+      <point x="133.0" y="-55.5" />
+      <point x="685.0" y="3806.0" />
+      <point x="692.0" y="3806.0" />
+      <point x="692.0" y="3686.0" />
+      <point x="552.0" y="3686.0" />
+      <point x="0.0" y="31.5" />
+    </edge>
+    <edge source="by.ilya.billingsoftware.service.impl.UserServiceImpl" target="by.ilya.billingsoftware.io.out.UserResponse" relationship="DEPENDENCY">
+      <point x="0.0" y="-67.5" />
+      <point x="1022.1446808510641" y="1926.0" />
+      <point x="902.1446808510641" y="1926.0" />
+      <point x="902.1446808510641" y="1606.0" />
+      <point x="1282.144680851064" y="1606.0" />
+      <point x="0.0" y="152.5" />
+    </edge>
+    <edge source="by.ilya.billingsoftware.service.impl.AppUserDetailsService" target="by.ilya.billingsoftware.repository.UserRepository" relationship="TO_ONE">
+      <point x="0.0" y="-31.5" />
+      <point x="662.1446808510641" y="1866.0" />
+      <point x="462.1446808510641" y="1866.0" />
+      <point x="462.1446808510641" y="1766.0" />
+      <point x="322.1446808510641" y="1766.0" />
+      <point x="0.0" y="43.5" />
+    </edge>
+    <edge source="by.ilya.billingsoftware.controller.CategoryController" target="by.ilya.billingsoftware.io.out.CategoryResponse" relationship="DEPENDENCY">
+      <point x="114.0" y="-55.5" />
+      <point x="206.0" y="3806.0" />
+      <point x="272.0" y="3806.0" />
+      <point x="272.0" y="3386.0" />
+      <point x="192.0" y="3386.0" />
+      <point x="0.0" y="164.5" />
+    </edge>
+    <edge source="by.ilya.billingsoftware.exceptions.config.GlobalExceptionHandler" target="by.ilya.billingsoftware.exceptions.config.ErrorResponse" relationship="DEPENDENCY">
+      <point x="0.0" y="-55.5" />
+      <point x="602.1446808510641" y="2406.0" />
+      <point x="482.1446808510641" y="2406.0" />
+      <point x="0.0" y="31.5" />
+    </edge>
+    <edge source="by.ilya.billingsoftware.service.UserService" target="by.ilya.billingsoftware.io.out.UserResponse" relationship="DEPENDENCY">
+      <point x="0.0" y="-67.5" />
+      <point x="0.0" y="152.5" />
+    </edge>
+    <edge source="by.ilya.billingsoftware.controller.AuthController" target="by.ilya.billingsoftware.service.impl.AppUserDetailsService" relationship="TO_ONE">
+      <point x="-83.5" y="-43.5" />
+      <point x="1378.644680851064" y="2426.0" />
+      <point x="1202.144680851064" y="2426.0" />
+      <point x="1202.144680851064" y="2406.0" />
+      <point x="922.1446808510641" y="2406.0" />
+      <point x="922.1446808510641" y="2366.0" />
+      <point x="662.1446808510641" y="2366.0" />
+      <point x="0.0" y="31.5" />
+    </edge>
+    <edge source="by.ilya.billingsoftware.service.impl.CategoryServiceImpl" target="by.ilya.billingsoftware.io.out.CategoryResponse" relationship="DEPENDENCY">
+      <point x="0.0" y="-55.5" />
+      <point x="552.0" y="3806.0" />
+      <point x="352.0" y="3806.0" />
+      <point x="352.0" y="3786.0" />
+      <point x="312.0" y="3786.0" />
+      <point x="312.0" y="3546.0" />
+      <point x="272.0" y="3546.0" />
+      <point x="272.0" y="3386.0" />
+      <point x="192.0" y="3386.0" />
+      <point x="0.0" y="164.5" />
+    </edge>
+    <edge source="by.ilya.billingsoftware.repository.ItemRepository" target="by.ilya.billingsoftware.entity.ItemEntity" relationship="DEPENDENCY">
+      <point x="0.0" y="-43.5" />
+      <point x="932.0" y="3546.0" />
+      <point x="1135.322340425532" y="3546.0" />
+      <point x="0.0" y="176.5" />
+    </edge>
+    <edge source="by.ilya.billingsoftware.entity.ItemEntity" target="by.ilya.billingsoftware.entity.CategoryEntity" relationship="TO_ONE">
+      <point x="0.0" y="-176.5" />
+      <point x="1135.322340425532" y="3007.570370795073" />
+      <point x="202.3946808510641" y="3007.570370795073" />
+      <point x="60.25" y="164.5" />
+    </edge>
+    <edge source="by.ilya.billingsoftware.controller.UserController" target="by.ilya.billingsoftware.service.UserService" relationship="TO_ONE">
+      <point x="-78.75" y="-55.5" />
+      <point x="1303.394680851064" y="2015.0" />
+      <point x="1302.144680851064" y="2015.0" />
+      <point x="1302.144680851064" y="1655.0" />
+      <point x="1358.644680851064" y="1655.0" />
+      <point x="76.5" y="67.5" />
+    </edge>
+    <edge source="by.ilya.billingsoftware.repository.CategoryRepository" target="by.ilya.billingsoftware.entity.CategoryEntity" relationship="DEPENDENCY">
+      <point x="0.0" y="-31.5" />
+      <point x="552.0" y="3426.0" />
+      <point x="682.1446808510641" y="3426.0" />
+      <point x="682.1446808510641" y="2946.0" />
+      <point x="362.1446808510641" y="2946.0" />
+      <point x="362.1446808510641" y="2926.0" />
+      <point x="81.8946808510641" y="2926.0" />
+      <point x="-60.25" y="164.5" />
+    </edge>
+    <edge source="by.ilya.billingsoftware.service.impl.ItemServiceImpl" target="by.ilya.billingsoftware.repository.CategoryRepository" relationship="TO_ONE">
+      <point x="-113.0" y="-55.5" />
+      <point x="939.0" y="3806.0" />
+      <point x="932.0" y="3806.0" />
+      <point x="932.0" y="3706.0" />
+      <point x="692.0" y="3706.0" />
+      <point x="692.0" y="3686.0" />
+      <point x="552.0" y="3686.0" />
+      <point x="0.0" y="31.5" />
+    </edge>
+    <edge source="by.ilya.billingsoftware.service.impl.CategoryServiceImpl" target="by.ilya.billingsoftware.repository.ItemRepository" relationship="TO_ONE">
+      <point x="133.0" y="-55.5" />
+      <point x="685.0" y="3806.0" />
+      <point x="692.0" y="3806.0" />
+      <point x="692.0" y="3746.0" />
+      <point x="932.0" y="3746.0" />
+      <point x="0.0" y="43.5" />
+    </edge>
+    <edge source="by.ilya.billingsoftware.service.impl.CategoryServiceImpl" target="by.ilya.billingsoftware.service.CategoryService" relationship="REALIZATION">
+      <point x="-133.0" y="-55.5" />
+      <point x="419.0" y="3766.0" />
+      <point x="151.75" y="3766.0" />
+      <point x="99.75" y="55.5" />
+    </edge>
+    <edge source="by.ilya.billingsoftware.controller.AuthController" target="by.ilya.billingsoftware.io.out.AuthResponse" relationship="DEPENDENCY">
+      <point x="83.5" y="-43.5" />
+      <point x="1545.644680851064" y="2515.0" />
+      <point x="1597.144680851064" y="2515.0" />
+      <point x="1597.144680851064" y="1950.5" />
+      <point x="0.0" y="55.5" />
+    </edge>
+    <edge source="by.ilya.billingsoftware.service.CategoryService" target="by.ilya.billingsoftware.io.out.CategoryResponse" relationship="DEPENDENCY">
+      <point x="0.0" y="-55.5" />
+      <point x="52.0" y="3546.0" />
+      <point x="272.0" y="3546.0" />
+      <point x="272.0" y="3386.0" />
+      <point x="192.0" y="3386.0" />
+      <point x="0.0" y="164.5" />
+    </edge>
+    <edge source="by.ilya.billingsoftware.service.impl.ItemServiceImpl" target="by.ilya.billingsoftware.service.impl.FileStorageService" relationship="TO_ONE">
+      <point x="-113.0" y="-55.5" />
+      <point x="939.0" y="3806.0" />
+      <point x="932.0" y="3806.0" />
+      <point x="932.0" y="3786.0" />
+      <point x="752.0" y="3786.0" />
+      <point x="0.0" y="43.5" />
+    </edge>
+    <edge source="by.ilya.billingsoftware.filters.JwtRequestFilter" target="by.ilya.billingsoftware.service.impl.AppUserDetailsService" relationship="TO_ONE">
+      <point x="0.0" y="-14.0" />
+      <point x="1042.144680851064" y="2686.0" />
+      <point x="922.1446808510641" y="2686.0" />
+      <point x="922.1446808510641" y="2366.0" />
+      <point x="662.1446808510641" y="2366.0" />
+      <point x="0.0" y="31.5" />
+    </edge>
+    <edge source="by.ilya.billingsoftware.service.impl.ItemServiceImpl" target="by.ilya.billingsoftware.repository.ItemRepository" relationship="TO_ONE">
+      <point x="-113.0" y="-55.5" />
+      <point x="939.0" y="3806.0" />
+      <point x="932.0" y="3806.0" />
+      <point x="0.0" y="43.5" />
+    </edge>
+    <edge source="by.ilya.billingsoftware.service.impl.CategoryServiceImpl" target="by.ilya.billingsoftware.service.impl.FileStorageService" relationship="TO_ONE">
+      <point x="133.0" y="-55.5" />
+      <point x="685.0" y="3806.0" />
+      <point x="692.0" y="3806.0" />
+      <point x="692.0" y="3726.0" />
+      <point x="752.0" y="3726.0" />
+      <point x="0.0" y="43.5" />
+    </edge>
+    <edge source="by.ilya.billingsoftware.service.impl.UserServiceImpl" target="by.ilya.billingsoftware.service.UserService" relationship="REALIZATION">
+      <point x="102.0" y="-67.5" />
+      <point x="1124.144680851064" y="1926.0" />
+      <point x="1205.644680851064" y="1926.0" />
+      <point x="-76.5" y="67.5" />
+    </edge>
+    <edge source="by.ilya.billingsoftware.controller.UserController" target="by.ilya.billingsoftware.io.out.UserResponse" relationship="DEPENDENCY">
+      <point x="78.75" y="-55.5" />
+      <point x="1460.894680851064" y="1815.0" />
+      <point x="1462.144680851064" y="1815.0" />
+      <point x="1462.144680851064" y="1475.0" />
+      <point x="1282.144680851064" y="1475.0" />
+      <point x="0.0" y="152.5" />
+    </edge>
+    <edge source="by.ilya.billingsoftware.service.ItemService" target="by.ilya.billingsoftware.io.out.ItemResponse" relationship="DEPENDENCY">
+      <point x="0.0" y="-55.5" />
+      <point x="1352.0" y="3546.0" />
+      <point x="1462.144680851064" y="3546.0" />
+      <point x="0.0" y="176.5" />
+    </edge>
+    <edge source="by.ilya.billingsoftware.service.impl.ItemServiceImpl" target="by.ilya.billingsoftware.service.ItemService" relationship="REALIZATION">
+      <point x="113.0" y="-55.5" />
+      <point x="1165.0" y="3806.0" />
+      <point x="1267.25" y="3806.0" />
+      <point x="-84.75" y="55.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Compact" zoom="0.2862179487179487" showDependencies="true" x="748.5" y="2392.0" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>public</VISIBILITY>
+</Diagram>
+
